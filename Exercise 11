@@ -1,0 +1,22 @@
+//exercise 11
+
+#include <iostream>
+using namespace std;
+
+void power(double x, double& A, double& B , double& C)
+{
+	A = x * x;
+	B = A * x;
+	C = B * x;
+}
+
+int main()
+{
+	double x, A, B, C;
+	cout << "Input number : ";
+	cin >> x;
+	power(x, A, B, C);
+	cout <<"square : "<<"\t"<<	 A << endl;
+	cout <<"cube : " << "\t\t" <<  B << endl;
+	cout << "biqsquare : " << "\t" << C << endl;
+}
