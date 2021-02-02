@@ -1,0 +1,36 @@
+//exercise 7	
+
+#include <iostream>
+using namespace std;
+
+int simple();
+int main()
+{
+	int f;
+	cout << "insert amount of tries: ";
+	cin >> f;
+	for (int i = 0; i < f; i++)
+	{
+		int res = simple();
+		cout << res<<" ";
+	}
+}
+int simple()
+{
+	static int x = 2;
+	int k = x;
+	for (int n =2; n <= x; n++)
+	{
+		if (n != x) // исключает деление само на себя
+		{
+			if (x % n == 0) // если поделилось на что то без остатка, значит составное, 
+			{
+				x++;		//значит берем следующее число.
+				k = x;	// запоминаем его
+				n =1;	//обнуляем счётчик перебора чисел
+			}
+		}
+	}
+	x++;
+	return k;
+}
